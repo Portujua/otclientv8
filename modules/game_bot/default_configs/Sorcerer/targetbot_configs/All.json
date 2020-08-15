@@ -1,0 +1,49 @@
+{
+  "looting": {
+    "items": [
+
+    ],
+    "maxDanger": 10,
+    "minCapacity": 100,
+    "containers": [
+
+    ],
+    "everyItem": false
+  },
+  "targeting": [
+    {
+      "useSpellAttack": false,
+      "priority": 1,
+      "useRuneAttack": true,
+      "maxDistance": 10,
+      "groupAttackIgnorePlayers": false,
+      "groupAttackIgnoreParty": false,
+      "lureCount": 3,
+      "minMana": 34,
+      "avoidAttacks": false,
+      "groupRuneAttackTargets": 2,
+      "attackSpell": "exevo gran mas frigo",
+      "groupAttackRune": 3161,
+      "useGroupAttackRune": false,
+      "groupAttackTargets": 1,
+      "groupRuneAttackDelay": 1000,
+      "groupAttackSpell": "exevo gran mas love",
+      "useGroupAttack": true,
+      "keepDistanceRange": 1,
+      "attackRune": 3161,
+      "chase": true,
+      "runeAttackDelay": 200,
+      "attackSpellDelay": 1000,
+      "keepDistance": false,
+      "lureCavebot": false,
+      "danger": 1,
+      "groupAttackRadius": 1,
+      "lure": false,
+      "minManaGroup": 289,
+      "groupRuneAttackRadius": 1,
+      "groupAttackDelay": 1000,
+      "name": "*",
+      "regex": "^.*$"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "looting": {
+    "items": [
+
+    ],
+    "maxDanger": 10,
+    "minCapacity": 100,
+    "containers": [
+
+    ],
+    "everyItem": false
+  },
+  "targeting": [
+    {
+      "useSpellAttack": true,
+      "priority": 1,
+      "useRuneAttack": false,
+      "maxDistance": 10,
+      "groupAttackIgnorePlayers": true,
+      "groupAttackIgnoreParty": true,
+      "lureCount": 4,
+      "minMana": 34,
+      "avoidAttacks": false,
+      "groupRuneAttackTargets": 2,
+      "attackSpell": "exori gran con",
+      "groupAttackRune": 0,
+      "useGroupAttackRune": false,
+      "groupAttackTargets": 2,
+      "groupRuneAttackDelay": 5000,
+      "groupAttackSpell": "exevo mas san",
+      "useGroupAttack": true,
+      "keepDistanceRange": 1,
+      "attackRune": 3155,
+      "chase": true,
+      "runeAttackDelay": 200,
+      "attackSpellDelay": 1000,
+      "keepDistance": false,
+      "lureCavebot": true,
+      "danger": 1,
+      "groupAttackRadius": 1,
+      "lure": false,
+      "minManaGroup": 289,
+      "groupRuneAttackRadius": 1,
+      "groupAttackDelay": 1000,
+      "name": "*",
+      "regex": "^.*$"
+    }
+  ]
+}

@@ -57,7 +57,8 @@ function timeleftTranslation(timeleft, forPreyTimeleft) -- in seconds
     return "" .. minutes .. "m"
   end
   return tr("Available in") .. " " .. minutes .. "m"
-end  
+end
+  
 function init()
   connect(g_game, {
     onGameStart = check,
@@ -274,10 +275,13 @@ function onPreySelection(slot, bonusType, bonusValue, bonusGrade, names, outfits
   end
   prey.button.onClick = function()
     local child = prey.list:getFocusedChild()
-    if not child then 
-          return showMessage(tr("Error"), tr("Select monster to proceed."))
+    local index = 1
+    if child then 
+      -- Eduardo was here!
+      index = prey.list:getChildIndex(child)
+      --return showMessage(tr("Error"), tr("Select monster to proceed."))
     end
-    local index = prey.list:getChildIndex(child)
+
     g_game.preyAction(slot, PREY_ACTION_MONSTERSELECTION, index - 1)
   end
 end

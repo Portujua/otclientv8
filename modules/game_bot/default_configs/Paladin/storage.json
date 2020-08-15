@@ -1,0 +1,147 @@
+{
+  "hpitem1": {
+    "max": 40,
+    "title": "HP%",
+    "min": 0,
+    "item": 23375,
+    "on": false,
+    "subType": 0
+  },
+  "_macros": {
+    "": false,
+    "Utito tempo": false,
+    "Utito tempo san": false,
+    "Sorcerer": false,
+    "Full Paladin": false,
+    "anti paralyze": false,
+    "Distance": false,
+    "Axe": false,
+    "eat food": true,
+    "haste": true,
+    "Critical": false,
+    "Life Leech": false,
+    "Auto summon": true,
+    "Anti Kick": true,
+    "Paladin": false,
+    "Knight": false,
+    "Mana Leech": false
+  },
+  "autoEquip": [
+    {
+      "item1": 3052,
+      "title": "Auto Equip",
+      "item2": 3089,
+      "on": false,
+      "slot": 9
+    },
+    {
+      "item1": 0,
+      "title": "Auto Equip",
+      "item2": 0,
+      "on": false,
+      "slot": 0
+    },
+    {
+      "item1": 0,
+      "title": "Auto Equip",
+      "item2": 0,
+      "on": false,
+      "slot": 0
+    },
+    {
+      "item1": 0,
+      "title": "Auto Equip",
+      "item2": 0,
+      "on": false,
+      "slot": 0
+    }
+  ],
+  "healing2": {
+    "max": 50,
+    "title": "HP%",
+    "on": false,
+    "min": 0,
+    "text": "exura vita"
+  },
+  "hasteSpell": "utani hur",
+  "autoSummonSpell": "utevo gran res eq",
+  "_configs": {
+    "cavebot_configs": {
+      "enabled": true,
+      "selected": "Prison"
+    },
+    "targetbot_configs": {
+      "selected": "All",
+      "enabled": true
+    }
+  },
+  "healing1": {
+    "max": 90,
+    "title": "HP%",
+    "on": true,
+    "min": 0,
+    "text": "exura gran san"
+  },
+  "foodItems": [
+    {
+      "count": 1,
+      "id": 3582
+    },
+    {
+      "count": 1,
+      "id": 3577
+    },
+    {
+      "count": 99,
+      "id": 3725
+    }
+  ],
+  "dropItems": [
+    {
+      "id": 283,
+      "count": 1
+    },
+    {
+      "id": 284,
+      "count": 1
+    },
+    {
+      "id": 285,
+      "count": 1
+    }
+  ],
+  "manaitem2": {
+    "max": 50,
+    "title": "MP%",
+    "min": 0,
+    "item": 3157,
+    "on": false,
+    "subType": 0
+  },
+  "manaitem1": {
+    "max": 90,
+    "title": "MP%",
+    "min": 51,
+    "item": 268,
+    "on": false,
+    "subType": 0
+  },
+  "hpitem2": {
+    "max": 50,
+    "title": "HP%",
+    "min": 0,
+    "item": 3160,
+    "on": false,
+    "subType": 0
+  },
+  "manaShield": "utamo vita",
+  "autoTradeMessage": "I'm using OTClientV8!",
+  "antiParalyze": "utani hur",
+  "manaTrain": {
+    "max": 100,
+    "title": "MP%",
+    "on": false,
+    "min": 44,
+    "text": "exori gran con"
+  }
+}

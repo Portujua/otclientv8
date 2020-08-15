@@ -3,7 +3,7 @@ local Panels = context.Panels
 
 Panels.Haste = function(parent)
   context.macro(500, "Auto Haste", nil, function()
-    if not context.hasHaste() and context.storage.autoHasteText:len() > 0 then
+    if not context.hasHaste() and context.storage.autoHasteText:len() > 0 and not context.isInPz() then
       if context.saySpell(context.storage.autoHasteText, 2500) then
         context.delay(5000)
       end

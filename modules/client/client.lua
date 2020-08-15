@@ -88,7 +88,7 @@ function init()
   end
 
   g_window.setTitle(g_app.getName())
-  g_window.setIcon('/images/clienticon')
+  g_window.setIcon('/images/icon')
 
   g_keyboard.bindKeyDown('Ctrl+Shift+R', reloadScripts)
 
@@ -117,7 +117,7 @@ end
 function onGameStart()
   local player = g_game.getLocalPlayer()
   if not player then return end
-  g_window.setTitle(g_app.getName() .. " - " .. player:getName())  
+  g_window.setTitle(player:getName())  
 end
 
 function onGameEnd()

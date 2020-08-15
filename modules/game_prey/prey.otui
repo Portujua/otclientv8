@@ -21,7 +21,7 @@ PreySelectionLabel < Label
     
 PreySlot < Panel
   width: 190
-  height: 280
+  height: 450
   border: 1 black
   padding: 5
   
@@ -41,7 +41,7 @@ PreySlot < Panel
     margin-top: 15
     margin-right: 10
     vertical-scrollbar: listScrollbar
-    height: 150
+    height: 320
     visible: false
     focusable: false
     
@@ -91,7 +91,7 @@ PreySlot < Panel
 
   Button
     id: button
-    margin-top: 5
+    margin-top: 255
     anchors.top: prev.bottom
     anchors.left: parent.left
     anchors.right: parent.right
@@ -131,7 +131,7 @@ PreySlot < Panel
 MainWindow
   id: preyWindow
   !text: tr('Preys')
-  size: 600 405
+  size: 600 525
   background-color: #AAAAAA
   @onEscape: modules.game_prey.hide()
   

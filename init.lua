@@ -1,5 +1,5 @@
 -- CONFIG
-APP_NAME = "otclientv8"  -- important, change it, it's name for config dir and files in appdata
+APP_NAME = "otclientv8_modded"  -- important, change it, it's name for config dir and files in appdata
 APP_VERSION = 1342       -- client version for updater and login to identify outdated client
 DEFAULT_LAYOUT = "retro" -- on android it's forced to "mobile", check code bellow
 
@@ -15,6 +15,8 @@ Services = {
 
 -- Servers accept http login url, websocket login url or ip:port:version
 Servers = {
+  EmperaOT = "loga.emperaot.com:7171:1100",
+  OTChaos = "otchaos.zapto.org:7171:760",
 --[[  OTClientV8 = "http://otclient.ovh/api/login.php",
   OTClientV8c = "otclient.ovh:7171",
   OTClientV8Test = "http://otclient.ovh/api/login2.php",
@@ -22,9 +24,9 @@ Servers = {
 }
 
 --USE_NEW_ENERGAME = true -- uses entergamev2 based on websockets instead of entergame
-ALLOW_CUSTOM_SERVERS = true -- if true it shows option ANOTHER on server list
+ALLOW_CUSTOM_SERVERS = false -- if true it shows option ANOTHER on server list
 
-g_app.setName("OTCv8")
+g_app.setName("Tibia")
 -- CONFIG END
 
 -- print first terminal message
