@@ -185,6 +185,14 @@ macro(3000, "Full Knight", function()
   m = m + 1
   schedule(1000 * m, function() NPC.buy(21200, 20) end)
   m = m + 1
+
+  -- Death Protection
+  schedule(1000 * m, function() NPC.buy(11466, 50) end)
+  m = m + 1
+  schedule(1000 * m, function() NPC.buy(22007, 40) end)
+  m = m + 1
+  schedule(1000 * m, function() NPC.buy(9660, 10) end)
+  m = m + 1
 end)
 
 macro(3000, "Life Leech", function()
