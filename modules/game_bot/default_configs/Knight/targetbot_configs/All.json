@@ -3,11 +3,23 @@
     "items": [
       {
         "count": 1,
+        "id": 7382
+      },
+      {
+        "count": 1,
+        "id": 3364
+      },
+      {
+        "count": 1,
         "id": 3420
       },
       {
         "count": 1,
-        "id": 7382
+        "id": 3414
+      },
+      {
+        "count": 1,
+        "id": 3554
       },
       {
         "count": 1,
@@ -19,13 +31,68 @@
       },
       {
         "count": 1,
-        "id": 7451
+        "id": 3320
+      },
+      {
+        "count": 1,
+        "id": 3281
+      },
+      {
+        "count": 1,
+        "id": 3340
+      },
+      {
+        "count": 1,
+        "id": 3019
+      },
+      {
+        "count": 1,
+        "id": 3360
+      },
+      {
+        "count": 1,
+        "id": 8061
+      },
+      {
+        "count": 1,
+        "id": 7412
+      },
+      {
+        "count": 1,
+        "id": 5741
+      },
+      {
+        "count": 1,
+        "id": 7419
+      },
+      {
+        "count": 1,
+        "id": 7418
+      },
+      {
+        "count": 1,
+        "id": 823
+      },
+      {
+        "count": 1,
+        "id": 6553
+      },
+      {
+        "count": 1,
+        "id": 821
+      },
+      {
+        "count": 1,
+        "id": 826
       }
     ],
     "maxDanger": 10,
     "minCapacity": 100,
     "containers": [
-
+      {
+        "count": 1,
+        "id": 5801
+      }
     ],
     "everyItem": false
   },
