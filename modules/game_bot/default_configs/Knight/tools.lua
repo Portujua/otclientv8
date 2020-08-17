@@ -131,7 +131,9 @@ end)
 UI.Separator()
 
 macro(100, "Utito tempo", function()
-  if not hasPartyBuff() and player:getMana() >= 290 and not isInPz() then
+  -- const.lua:52 or search for "axe"
+  local axeSetBonus = 27
+  if player:getSkillBaseLevel(3) + axeSetBonus == player:getSkillLevel(3) and player:getMana() >= 290 and not isInPz() then
     say("utito tempo")
   end
 end)
