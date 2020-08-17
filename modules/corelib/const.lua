@@ -321,5 +321,7 @@ SoundChannels = {
   Music = 1,
   Ambient = 2,
   Effect = 3,
-  Bot = 4
+  Bot = 4,
+  Messages = 5,
+  Alerts = 6
 }

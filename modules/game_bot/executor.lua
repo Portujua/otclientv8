@@ -90,6 +90,8 @@ function executeBot(config, storage, tabs, msgCallback, saveConfigCallback, relo
   context.getVersion = g_app.getVersion
   
   -- classes
+  context.g_sounds = g_sounds
+  context.g_logger = g_logger
   context.g_resources = g_resources
   context.g_game = g_game
   context.g_map = g_map
@@ -114,6 +116,12 @@ function executeBot(config, storage, tabs, msgCallback, saveConfigCallback, relo
   context.HTTP = HTTP
   context.OutputMessage = OutputMessage
   context.modules = modules
+
+  -- Others
+  context.SoundChannels = SoundChannels
+  context.SkullWhite = SkullWhite
+  context.SkullRed = SkullRed
+  context.SkullBlack = SkullBlack
 
   -- log functions
   context.info = function(text) return msgCallback("info", tostring(text)) end

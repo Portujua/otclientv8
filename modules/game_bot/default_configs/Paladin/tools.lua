@@ -78,6 +78,26 @@ macro(10000, "Anti Kick",  function()
   turn(dir)
 end)
 
+macro(5000, "Alert PK", function()
+  if isInPz() then return end
+  
+  local creatures = g_map.getSpectatorsInRange(player:getPosition(), false, 9, 9)
+  local pk = false
+
+  for _, creature in ipairs(creatures) do
+    if not creature:isLocalPlayer() and creature:isPlayer() and 
+      (creature:getSkull() == SkullWhite or creature:getSkull() == SkullRed
+        or creature:getSkull() == SkullBlack)
+    then
+      pk = true
+    end
+  end
+
+  if pk == true then
+    playAlarm()
+  end
+end)
+
 UI.Separator()
 UI.Label("Drop items:")
 if type(storage.dropItems) ~= "table" then

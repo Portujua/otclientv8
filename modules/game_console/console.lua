@@ -1168,6 +1168,14 @@ function onTalk(name, level, mode, message, channelId, creaturePos)
     addPrivateText(composedMessage, speaktype, name, false, name)
     if modules.client_options.getOption('showPrivateMessagesOnScreen') and speaktype ~= SpeakTypesSettings.privateNpcToPlayer then
       modules.game_textmessage.displayPrivateMessage(name .. ':\n' .. message)
+      -- Play sound here
+      local channel = g_sounds.getChannel(SoundChannels.Messages)
+      if not channel then
+        return
+      end
+      channel:setEnabled(true)
+      channel:stop(0)
+      channel:play('/sounds/privMessage.ogg', 0, 1.0)
     end
   else
     local channel = tr('Default')
