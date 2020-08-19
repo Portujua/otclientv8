@@ -88,12 +88,7 @@
     ],
     "maxDanger": 10,
     "minCapacity": 100,
-    "containers": [
-      {
-        "count": 1,
-        "id": 5801
-      }
-    ],
+    "containers": [],
     "everyItem": false
   },
   "targeting": [
