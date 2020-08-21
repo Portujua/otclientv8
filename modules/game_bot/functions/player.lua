@@ -99,7 +99,7 @@ context.saySpell = function(text, lastSpellTimeout)
     context.lastSpell = 0
   end
   if not lastSpellTimeout then
-    lastSpellTimeout = 1000
+    lastSpellTimeout = 100
   end
   if context.lastSpell + lastSpellTimeout > context.now then
     return false
@@ -134,7 +134,7 @@ context.useRune = function(itemid, target, lastSpellTimeout)
     context.lastRuneUse = 0
   end
   if not lastRuneTimeout then
-    lastRuneTimeout = 1000
+    lastRuneTimeout = 100
   end
   if context.lastRuneUse + lastRuneTimeout > context.now then
     return false
