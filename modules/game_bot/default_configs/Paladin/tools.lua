@@ -144,6 +144,20 @@ end)
 
 UI.Separator()
 
+UI.TextEdit(storage.autoArrow or "exevo gran con hur", function(widget, text)    
+  storage.autoArrow = text
+end)
+
+macro(1000, "Auto arrows/bolts", function()
+  local arrowSlot = getSlot(InventorySlotAmmo)
+
+  if not arrowSlot then
+    say(storage.autoArrow)
+  end
+end)
+
+UI.Separator()
+
 UI.Label("Auto Summon")
 
 macro(10000, "Knight", function()
