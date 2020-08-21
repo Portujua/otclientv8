@@ -9,16 +9,16 @@
   },
   "foodItems": [
     {
-      "count": 1,
-      "id": 3582
+      "id": 3582,
+      "count": 1
     },
     {
-      "count": 1,
-      "id": 3577
+      "id": 3577,
+      "count": 1
     },
     {
-      "count": 99,
-      "id": 3725
+      "id": 3725,
+      "count": 99
     }
   ],
   "autoEquip": [
@@ -58,16 +58,21 @@
     "min": 0,
     "text": "exura vita"
   },
+  "forceSqm": {
+    "y": 31898,
+    "x": 33227,
+    "z": 5
+  },
   "hasteSpell": "utani hur",
-  "antiParalyze": "exura ico",
+  "autoSummonSpell": "utevo gran res eq",
   "_configs": {
-    "cavebot_configs": {
-      "enabled": true,
-      "selected": "Train"
-    },
     "targetbot_configs": {
-      "selected": "All",
-      "enabled": false
+      "enabled": true,
+      "selected": "All"
+    },
+    "cavebot_configs": {
+      "selected": "Train",
+      "enabled": true
     }
   },
   "healing1": {
@@ -76,6 +81,10 @@
     "on": true,
     "min": 0,
     "text": "exura ico"
+  },
+  "previousPosition": {
+    "y": -1,
+    "x": -1
   },
   "manaTrain": {
     "max": 100,
@@ -86,19 +95,26 @@
   },
   "dropItems": [
     {
-      "id": 283,
-      "count": 1
+      "count": 1,
+      "id": 283
     },
     {
-      "id": 284,
-      "count": 1
+      "count": 1,
+      "id": 284
     },
     {
-      "id": 285,
-      "count": 1
+      "count": 1,
+      "id": 285
     }
   ],
-  "autoSummonSpell": "utevo gran res eq",
+  "manaitem2": {
+    "max": 50,
+    "title": "MP%",
+    "subType": 0,
+    "item": 3157,
+    "min": 0,
+    "on": false
+  },
   "manaitem1": {
     "max": 90,
     "title": "MP%",
@@ -117,27 +133,20 @@
   },
   "manaShield": "utamo vita",
   "autoTradeMessage": "I'm using OTClientV8!",
-  "manaitem2": {
-    "max": 50,
-    "title": "MP%",
-    "subType": 0,
-    "item": 3157,
-    "min": 0,
-    "on": false
-  },
+  "antiParalyze": "exura ico",
   "_macros": {
     "": false,
     "Utito tempo": true,
     "Full Knight": false,
     "Sorcerer": false,
-    "Stack items": true,
-    "eat food": true,
+    "anti paralyze": true,
+    "Exeta res": false,
     "Paladin": false,
     "Axe": false,
-    "Exeta res": false,
+    "Stack items": true,
     "Critical": false,
     "haste": true,
-    "anti paralyze": false,
+    "eat food": true,
     "Knight": false,
     "Auto summon": true,
     "Exchange money": true,
