@@ -11,6 +11,7 @@ local botWebSockets = {}
 local botMessages = nil
 local botTabs = nil
 local botExecutor = nil
+local settingsDirectory = nil
 
 local configList = nil
 local enableButton = nil
@@ -60,6 +61,8 @@ function init()
 end
 
 function terminate()
+  
+  g_logger.info("Saving bot configuration(terminate)...")
   save()
   clear()
 
@@ -117,6 +120,8 @@ end
 
 function refresh()
   if not g_game.isOnline() then return end
+  
+  g_logger.info("Saving bot configuration(refresh)...")
   save()
   clear()
   
@@ -184,6 +189,8 @@ function refresh()
   -- storage
   botStorage = {}
   botStorageFile = "/bot/" .. configName .. "/storage.json"
+  settingsDirectory = io.popen"cd":read'*l' .. "/modules/game_bot/default_configs/" .. configName .. "/storage.json"
+
   if g_resources.fileExists(botStorageFile) then
     local status, result = pcall(function() 
       return json.decode(g_resources.readFileContents(botStorageFile)) 
@@ -203,23 +210,29 @@ function refresh()
   end
   
   statusLabel:setOn(false)
+  g_logger.info("botExecutor has a value now! " .. table.tostring(result))
   botExecutor = result
   check()
 end
 
 function save()
+  g_logger.info("Saving bot configuration(save)...")
   if not botExecutor then
+    g_logger.error("Couldn't save bot settings. 'botExecutor' is null")
     return
   end
   
   local settings = g_settings.getNode('bot') or {}
   local index = g_game.getCharacterName() .. "_" .. g_game.getClientVersion()
   if settings[index] == nil then
+    g_logger.error("Settings[index] is null")
     return
   end
   
   local status, result = pcall(function() 
-    return json.encode(botStorage, 2) 
+    local _json = json.encode(botStorage, 2)
+    -- g_logger.info("Saving callback: " .. _json)
+    return _json
   end)
   if not status then
     return onError("Error while saving bot storage. Storage won't be saved. Details: " .. result)
@@ -229,6 +242,10 @@ function save()
     return onError("Storage file is too big, above 100MB, it won't be saved")
   end
   
+  local file = io.open(settingsDirectory, "w")
+  file:write(result)
+  file:close()
+
   g_resources.writeFileContents(botStorageFile, result)
 end
 
@@ -252,6 +269,8 @@ function online()
 end
 
 function offline()
+  
+  g_logger.info("Saving bot configuration(offline)...")
   save()
   clear()
   botButton:hide()
