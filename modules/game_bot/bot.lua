@@ -11,7 +11,10 @@ local botWebSockets = {}
 local botMessages = nil
 local botTabs = nil
 local botExecutor = nil
+
 local settingsDirectory = nil
+local lastConfigName = nil
+local lastConfig = nil
 
 local configList = nil
 local enableButton = nil
@@ -189,7 +192,11 @@ function refresh()
   -- storage
   botStorage = {}
   botStorageFile = "/bot/" .. configName .. "/storage.json"
-  settingsDirectory = io.popen"cd":read'*l' .. "/modules/game_bot/default_configs/" .. configName .. "/storage.json"
+
+  if lastConfigName ~= configName or not settingsDirectory then
+    lastConfigName = configName
+    settingsDirectory = io.popen"cd":read'*l' .. "/modules/game_bot/default_configs/" .. configName .. "/storage.json"
+  end
 
   if g_resources.fileExists(botStorageFile) then
     local status, result = pcall(function() 
@@ -210,7 +217,7 @@ function refresh()
   end
   
   statusLabel:setOn(false)
-  g_logger.info("botExecutor has a value now! " .. table.tostring(result))
+  -- g_logger.info("botExecutor has a value now! " .. table.tostring(result))
   botExecutor = result
   check()
 end
@@ -242,9 +249,12 @@ function save()
     return onError("Storage file is too big, above 100MB, it won't be saved")
   end
   
-  local file = io.open(settingsDirectory, "w")
-  file:write(result)
-  file:close()
+  if result ~= lastConfig then
+    local file = io.open(settingsDirectory, "w")
+    file:write(result)
+    file:close()
+    lastConfig = result
+  end
 
   g_resources.writeFileContents(botStorageFile, result)
 end
