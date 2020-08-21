@@ -98,34 +98,106 @@ macro(5000, "Alert PK", function()
   end
 end)
 
+-- UI.Separator()
+-- UI.Label("Drop items:")
+-- if type(storage.dropItems) ~= "table" then
+--   storage.dropItems = {283, 284, 285}
+-- end
+
+-- local foodContainer = UI.Container(function(widget, items)
+--   storage.dropItems = items
+-- end, true)
+-- foodContainer:setHeight(35)
+-- foodContainer:setItems(storage.dropItems)
+
+-- macro(5000, "drop items", function()
+--   if not storage.dropItems[1] then return end
+--   if TargetBot and TargetBot.isActive() then return end -- pause when attacking
+--   for _, container in pairs(g_game.getContainers()) do
+--     for __, item in ipairs(container:getItems()) do
+--       for i, dropItem in ipairs(storage.dropItems) do
+--         if item:getId() == dropItem.id then
+--           if item:isStackable() then
+--             return g_game.move(item, player:getPosition(), item:getCount())
+--           else
+--             return g_game.move(item, player:getPosition(), dropItem.count) -- count is also subtype
+--           end
+--         end
+--       end
+--     end
+--   end
+-- end)
+
 UI.Separator()
-UI.Label("Drop items:")
-if type(storage.dropItems) ~= "table" then
-  storage.dropItems = {283, 284, 285}
-end
 
-local foodContainer = UI.Container(function(widget, items)
-  storage.dropItems = items
-end, true)
-foodContainer:setHeight(35)
-foodContainer:setItems(storage.dropItems)
+storage.previousPosition = { x = -1, y = -1 }
 
-macro(5000, "drop items", function()
-  if not storage.dropItems[1] then return end
-  if TargetBot and TargetBot.isActive() then return end -- pause when attacking
-  for _, container in pairs(g_game.getContainers()) do
-    for __, item in ipairs(container:getItems()) do
-      for i, dropItem in ipairs(storage.dropItems) do
-        if item:getId() == dropItem.id then
-          if item:isStackable() then
-            return g_game.move(item, player:getPosition(), item:getCount())
-          else
-            return g_game.move(item, player:getPosition(), dropItem.count) -- count is also subtype
-          end
-        end
-      end
+macro(300, "Force SQM", function()  
+  if not storage.forceSqm then
+    return
+  end
+
+  local NORTH = 0
+  local EAST = 1
+  local SOUTH = 2
+  local WEST = 3
+
+  -- Move to storage.forceSqm
+  -- Calculate where to walk (because walkTo is not working)
+  if posz() ~= storage.forceSqm.z then
+    return -- Not the same floor
+  end
+
+  -- Compare to previous position to prevent stucking on one axis
+  local useXAxisFirst = true
+  if posx() == storage.previousPosition.x and posy() == storage.previousPosition.y then
+    useXAxisFirst = false
+  end
+
+  -- Store current position
+  storage.previousPosition = { x = posx(), y = posy() }
+
+  if useXAxisFirst then
+    if posx() < storage.forceSqm.x then
+      return walk(EAST)
+    elseif posx() > storage.forceSqm.x then
+      return walk(WEST)
+    elseif posy() > storage.forceSqm.y then
+      return walk(NORTH)
+    elseif posy() < storage.forceSqm.y then
+      return walk(SOUTH)
+    end
+  else
+    if posy() > storage.forceSqm.y then
+      return walk(NORTH)
+    elseif posy() < storage.forceSqm.y then
+      return walk(SOUTH)
+    elseif posx() < storage.forceSqm.x then
+      return walk(EAST)
+    elseif posx() > storage.forceSqm.x then
+      return walk(WEST)
     end
   end
+end)
+
+UI.TextEdit(storage.forceSqmStr or "33227,31898,5", function(widget, text)
+  local coords = {x=nil, y=nil, z=nil}
+  local i = 0 -- todo: find a better way...
+
+  for coord in string.gmatch(text, "[0-9]+") do
+    if i == 0 then
+      i = i + 1
+      coords.x = tonumber(coord)
+    elseif i == 1 then
+      i = i + 1
+      coords.y = tonumber(coord)
+    else
+      i = i + 1
+      coords.z = tonumber(coord)
+    end
+  end
+
+  storage.forceSqm = coords
 end)
 
 UI.Separator()
