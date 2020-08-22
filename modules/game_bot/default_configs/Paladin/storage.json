@@ -2,29 +2,17 @@
   "hpitem1": {
     "max": 40,
     "title": "HP%",
-    "min": 0,
-    "item": 23375,
     "on": false,
-    "subType": 0
+    "item": 23375,
+    "subType": 0,
+    "min": 0
   },
-  "_macros": {
-    "": false,
-    "Utito tempo": false,
-    "Utito tempo san": false,
-    "Sorcerer": false,
-    "Full Paladin": false,
-    "anti paralyze": false,
-    "Distance": false,
-    "Axe": false,
-    "eat food": true,
-    "haste": true,
-    "Critical": false,
-    "Life Leech": false,
-    "Auto summon": true,
-    "Anti Kick": true,
-    "Paladin": false,
-    "Knight": false,
-    "Mana Leech": false
+  "manaTrain": {
+    "max": 100,
+    "title": "MP%",
+    "on": false,
+    "min": 44,
+    "text": "exori gran con"
   },
   "autoEquip": [
     {
@@ -63,11 +51,16 @@
     "min": 0,
     "text": "exura vita"
   },
+  "forceSqm": {
+    "y": 31898,
+    "x": 33227,
+    "z": 5
+  },
   "hasteSpell": "utani hur",
   "autoSummonSpell": "utevo gran res eq",
   "_configs": {
     "cavebot_configs": {
-      "enabled": true,
+      "enabled": false,
       "selected": "Prison"
     },
     "targetbot_configs": {
@@ -82,20 +75,40 @@
     "min": 0,
     "text": "exura gran san"
   },
-  "foodItems": [
-    {
-      "count": 1,
-      "id": 3582
-    },
-    {
-      "count": 1,
-      "id": 3577
-    },
-    {
-      "count": 99,
-      "id": 3725
-    }
-  ],
+  "_macros": {
+    "": false,
+    "Utito tempo": false,
+    "Utito tempo san": false,
+    "Sorcerer": false,
+    "Full Paladin": false,
+    "anti paralyze": false,
+    "Distance": false,
+    "Stack items": true,
+    "Exchange money": true,
+    "Axe": false,
+    "Paladin": false,
+    "eat food": true,
+    "haste": true,
+    "Anti Kick": true,
+    "Life Leech": false,
+    "Auto summon": true,
+    "Auto arrows/bolts": true,
+    "Knight": false,
+    "Critical": false,
+    "Mana Leech": false
+  },
+  "previousPosition": {
+    "y": -1,
+    "x": -1
+  },
+  "manaitem2": {
+    "max": 50,
+    "title": "MP%",
+    "on": false,
+    "item": 3157,
+    "subType": 0,
+    "min": 0
+  },
   "dropItems": [
     {
       "id": 283,
@@ -110,38 +123,38 @@
       "count": 1
     }
   ],
-  "manaitem2": {
-    "max": 50,
-    "title": "MP%",
-    "min": 0,
-    "item": 3157,
-    "on": false,
-    "subType": 0
-  },
+  "manaShield": "utamo vita",
   "manaitem1": {
     "max": 90,
     "title": "MP%",
-    "min": 51,
-    "item": 268,
     "on": false,
-    "subType": 0
+    "item": 268,
+    "subType": 0,
+    "min": 51
   },
   "hpitem2": {
     "max": 50,
     "title": "HP%",
-    "min": 0,
-    "item": 3160,
     "on": false,
-    "subType": 0
+    "item": 3160,
+    "subType": 0,
+    "min": 0
   },
-  "manaShield": "utamo vita",
+  "autoArrow": "exevo gran con hur",
   "autoTradeMessage": "I'm using OTClientV8!",
   "antiParalyze": "utani hur",
-  "manaTrain": {
-    "max": 100,
-    "title": "MP%",
-    "on": false,
-    "min": 44,
-    "text": "exori gran con"
-  }
+  "foodItems": [
+    {
+      "count": 1,
+      "id": 3582
+    },
+    {
+      "count": 1,
+      "id": 3577
+    },
+    {
+      "count": 99,
+      "id": 3725
+    }
+  ]
 }

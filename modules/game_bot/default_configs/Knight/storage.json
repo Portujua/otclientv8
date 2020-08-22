@@ -2,18 +2,25 @@
   "hpitem1": {
     "max": 80,
     "title": "HP%",
-    "on": true,
-    "item": 23375,
     "subType": 0,
-    "min": 0
+    "item": 23375,
+    "min": 0,
+    "on": true
   },
-  "manaTrain": {
-    "max": 100,
-    "title": "MP%",
-    "on": false,
-    "min": 80,
-    "text": "utito tempo"
-  },
+  "foodItems": [
+    {
+      "id": 3582,
+      "count": 1
+    },
+    {
+      "id": 3577,
+      "count": 1
+    },
+    {
+      "id": 3725,
+      "count": 99
+    }
+  ],
   "autoEquip": [
     {
       "item1": 3052,
@@ -57,14 +64,7 @@
     "z": 5
   },
   "hasteSpell": "utani hur",
-  "manaitem2": {
-    "max": 50,
-    "title": "MP%",
-    "on": false,
-    "item": 3157,
-    "subType": 0,
-    "min": 0
-  },
+  "autoSummonSpell": "utevo gran res eq",
   "_configs": {
     "targetbot_configs": {
       "enabled": true,
@@ -86,25 +86,12 @@
     "y": -1,
     "x": -1
   },
-  "_macros": {
-    "": false,
-    "Utito tempo": true,
-    "Full Knight": false,
-    "Sorcerer": false,
-    "Stack items": true,
-    "Exeta res": false,
-    "Anti Kick": true,
-    "Axe": false,
-    "anti paralyze": true,
-    "Critical": false,
-    "haste": true,
-    "eat food": true,
-    "Paladin": false,
-    "Auto summon": true,
-    "Exchange money": true,
-    "Life Leech": false,
-    "Knight": false,
-    "Mana Leech": false
+  "manaTrain": {
+    "max": 100,
+    "title": "MP%",
+    "on": false,
+    "min": 80,
+    "text": "utito tempo"
   },
   "dropItems": [
     {
@@ -120,38 +107,52 @@
       "id": 285
     }
   ],
-  "antiParalyze": "exura ico",
+  "manaitem2": {
+    "max": 50,
+    "title": "MP%",
+    "subType": 0,
+    "item": 3157,
+    "min": 0,
+    "on": false
+  },
   "manaitem1": {
     "max": 90,
     "title": "MP%",
-    "on": false,
-    "item": 268,
     "subType": 0,
-    "min": 51
+    "item": 268,
+    "min": 51,
+    "on": false
   },
   "hpitem2": {
     "max": 50,
     "title": "HP%",
-    "on": false,
-    "item": 3160,
     "subType": 0,
-    "min": 0
+    "item": 3160,
+    "min": 0,
+    "on": false
   },
   "manaShield": "utamo vita",
-  "autoTradeMessage": "I'm using OTClientV8!",
-  "autoSummonSpell": "utevo gran res eq",
-  "foodItems": [
-    {
-      "id": 3582,
-      "count": 1
-    },
-    {
-      "id": 3577,
-      "count": 1
-    },
-    {
-      "id": 3725,
-      "count": 99
-    }
-  ]
+  "autoTradeMessage": "Trade my Donate Bow + Elven Mail for your Soulbastion shield",
+  "antiParalyze": "exura ico",
+  "_macros": {
+    "": false,
+    "Utito tempo": true,
+    "Full Knight": false,
+    "Sorcerer": false,
+    "Stack items": true,
+    "Mana Leech": false,
+    "Paladin": false,
+    "Life Leech": false,
+    "Axe": false,
+    "eat food": true,
+    "Critical": false,
+    "haste": true,
+    "Exeta res": false,
+    "Knight": false,
+    "Auto summon": true,
+    "Exchange money": true,
+    "Anti Kick": true,
+    "anti paralyze": true,
+    "Send message on trade": true
+  }
 }

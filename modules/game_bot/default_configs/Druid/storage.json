@@ -2,30 +2,25 @@
   "hpitem1": {
     "max": 40,
     "title": "HP%",
-    "min": 0,
-    "item": 23375,
     "on": false,
-    "subType": 0
+    "item": 23375,
+    "subType": 0,
+    "min": 0
   },
-  "_macros": {
-    "": false,
-    "Utito tempo": false,
-    "Sorcerer": false,
-    "anti paralyze": true,
-    "Magic Level": false,
-    "Knight": false,
-    "Axe": false,
-    "Druid": false,
-    "Critical": false,
-    "mana shield": false,
-    "haste": true,
-    "Life Leech": false,
-    "Auto summon": true,
-    "Anti Kick": true,
-    "Paladin": false,
-    "eat food": true,
-    "Mana Leech": false
-  },
+  "foodItems": [
+    {
+      "count": 1,
+      "id": 3582
+    },
+    {
+      "count": 1,
+      "id": 3577
+    },
+    {
+      "count": 99,
+      "id": 3725
+    }
+  ],
   "autoEquip": [
     {
       "item1": 3052,
@@ -63,13 +58,21 @@
     "min": 0,
     "text": "exura vita"
   },
-  "ingame_macros": "say(\"exevo gran mas love\")\nsay(\"exevo gran mas frigo\")",
+  "sioPercentage": 85,
+  "forceSqm": {
+    "y": 31898,
+    "x": 33227,
+    "z": 5
+  },
+  "sioNames": [
+    "Osszoi"
+  ],
   "hasteSpell": "utani mega hur",
-  "autoSummonSpell": "utevo gran res eq",
+  "antiParalyze": "exura vita",
   "_configs": {
     "cavebot_configs": {
-      "enabled": true,
-      "selected": "Asuras"
+      "enabled": false,
+      "selected": "Prison"
     },
     "targetbot_configs": {
       "selected": "All",
@@ -83,20 +86,42 @@
     "min": 0,
     "text": "exura vita"
   },
-  "foodItems": [
-    {
-      "count": 1,
-      "id": 3582
-    },
-    {
-      "count": 1,
-      "id": 3577
-    },
-    {
-      "count": 99,
-      "id": 3725
-    }
-  ],
+  "manaitem2": {
+    "max": 50,
+    "title": "MP%",
+    "on": false,
+    "item": 3157,
+    "subType": 0,
+    "min": 0
+  },
+  "_macros": {
+    "": false,
+    "Utito tempo": false,
+    "Auto sio": false,
+    "anti paralyze": true,
+    "UE Druid": true,
+    "Magic Level": false,
+    "Full Druid": false,
+    "Critical": false,
+    "Knight": false,
+    "Anti Kick": true,
+    "Axe": false,
+    "Druid": false,
+    "eat food": true,
+    "haste": true,
+    "Paladin": false,
+    "Sorcerer": false,
+    "Auto summon": true,
+    "Force Follow": false,
+    "Life Leech": false,
+    "mana shield": false,
+    "Mana Leech": false
+  },
+  "previousPosition": {
+    "y": -1,
+    "x": -1
+  },
+  "autoSummonSpell": "utevo gran res eq",
   "dropItems": [
     {
       "id": 283,
@@ -111,33 +136,26 @@
       "count": 1
     }
   ],
-  "manaitem2": {
-    "max": 50,
-    "title": "MP%",
-    "min": 0,
-    "item": 3157,
-    "on": false,
-    "subType": 0
-  },
+  "forceFollow": "Arkangelitox",
   "manaitem1": {
-    "max": 90,
+    "max": 70,
     "title": "MP%",
-    "min": 51,
-    "item": 268,
-    "on": false,
-    "subType": 0
+    "on": true,
+    "item": 23373,
+    "subType": 0,
+    "min": 0
   },
   "hpitem2": {
     "max": 50,
     "title": "HP%",
-    "min": 0,
-    "item": 3160,
     "on": false,
-    "subType": 0
+    "item": 3160,
+    "subType": 0,
+    "min": 0
   },
   "manaShield": "utamo vita",
   "autoTradeMessage": "I'm using OTClientV8!",
-  "antiParalyze": "exura vita",
+  "ingame_macros": "say(\"exevo gran mas love\")\nsay(\"exevo gran mas frigo\")",
   "manaTrain": {
     "max": 100,
     "title": "MP%",

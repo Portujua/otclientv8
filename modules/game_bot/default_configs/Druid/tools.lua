@@ -110,20 +110,84 @@ end)
 
 UI.Separator()
 
-UI.Label("UE Attacks")
-macro(1000, "UE Druid", function()  
-  schedule(100, function() say("exevo gran mas frigo") end)
-  schedule(100, function() say("exevo gran mas tera") end)
-  schedule(100, function() say("exevo gran mas love") end)
+macro(5000, "Alert PK", function()
+  if isInPz() then return end
+  
+  local creatures = g_map.getSpectatorsInRange(player:getPosition(), false, 9, 9)
+  local pk = false
+
+  for _, creature in ipairs(creatures) do
+    if not creature:isLocalPlayer() and creature:isPlayer() and 
+      (creature:getSkull() == SkullWhite or creature:getSkull() == SkullRed
+        or creature:getSkull() == SkullBlack)
+    then
+      pk = true
+    end
+  end
+
+  if pk == true then
+    playAlarm()
+  end
 end)
 
-macro(1000, "UE Sorcerer", function()  
-  schedule(100, function() say("exevo gran mas flam") end)
-  schedule(100, function() say("exevo gran mas vis") end)
-  schedule(100, function() say("exevo gran mas mort") end)
+-- config
+local key = nil
+local parent = nil
+
+-- script
+local creatureId = 0
+
+macro(100, "Keep Attack", key, function()
+  if g_game.getFollowingCreature() then
+    creatureId = 0
+    return
+  end
+  local creature = g_game.getAttackingCreature()
+  if creature then
+    creatureId = creature:getId()
+  elseif creatureId > 0 then
+    local target = getCreatureById(creatureId)
+    if target then
+      attack(target)
+      delay(500)
+    end
+  end
+end, parent)
+
+UI.Label("UE Attacks")
+macro(1000, "UE Druid", function()  
+  local creatures = g_map.getSpectatorsInRange(player:getPosition(), false, 6, 6)
+  local monsterCount = 0
+
+  for _, creature in ipairs(creatures) do
+    if creature:isMonster() then
+      monsterCount = monsterCount + 1
+    end
+  end
+
+  if monsterCount >= 1 then
+    schedule(100, function() say("exevo gran mas frigo") end)
+    schedule(100, function() say("exevo gran mas tera") end)
+    schedule(100, function() say("exevo gran mas love") end)
+  end
 end)
 
 UI.Separator()
+
+-- macro(100, "Force Follow", function()
+--   local creatures = g_map.getSpectatorsInRange(player:getPosition(), false, 9, 9)
+
+--   for creature in pairs(creatures) do
+--     if creature:getName() == storage.forceFollow then
+--       creature:follow()
+--       return
+--     end
+--   end
+-- end)
+
+-- UI.TextEdit(storage.forceSqmStr or "Arkangelitox", function(widget, text)
+--   storage.forceFollow = text
+-- end)
 
 storage.previousPosition = { x = -1, y = -1 }
 
@@ -264,6 +328,55 @@ end)
 UI.Separator()
 
 UI.Label("Imbuements")
+
+macro(3000, "Full Druid", function()
+  if NPC.isTrading() then return end
+  local m = 1
+  schedule(1000 * m, function() NPC.say("hi") end)
+  m = m + 1
+  schedule(1000 * m, function() NPC.say("trade") end)
+  m = m + 1
+
+  -- Life
+  schedule(1000 * m, function() NPC.buy(9685, 50) end)
+  m = m + 1
+  schedule(1000 * m, function() NPC.buy(9633, 30) end)
+  m = m + 1
+  schedule(1000 * m, function() NPC.buy(9663, 10) end)
+  m = m + 1
+
+  -- Mana
+  schedule(1000 * m, function() NPC.buy(11492, 50) end)
+  m = m + 1
+  schedule(1000 * m, function() NPC.buy(20200, 50) end)
+  m = m + 1
+  schedule(1000 * m, function() NPC.buy(22730, 10) end)
+  m = m + 1
+
+  -- Critical
+  schedule(1000 * m, function() NPC.buy(11444, 20) end)
+  m = m + 1
+  schedule(1000 * m, function() NPC.buy(10311, 25) end)
+  m = m + 1
+  schedule(1000 * m, function() NPC.buy(22728, 5) end)
+  m = m + 1
+
+  -- Axe
+  schedule(1000 * m, function() NPC.buy(9635, 25) end)
+  m = m + 1
+  schedule(1000 * m, function() NPC.buy(11452, 15) end)
+  m = m + 1
+  schedule(1000 * m, function() NPC.buy(10309, 15) end)
+  m = m + 1
+
+  -- Death Protection
+  schedule(1000 * m, function() NPC.buy(11466, 50) end)
+  m = m + 1
+  schedule(1000 * m, function() NPC.buy(22007, 40) end)
+  m = m + 1
+  schedule(1000 * m, function() NPC.buy(9660, 10) end)
+  m = m + 1
+end)
 
 macro(3000, "Life Leech", function()
   if NPC.isTrading() then return end
