@@ -129,6 +129,10 @@ function executeBot(config, storage, tabs, msgCallback, saveConfigCallback, relo
   context.SkullWhite = SkullWhite
   context.SkullRed = SkullRed
   context.SkullBlack = SkullBlack
+  context.ShieldBlueNoSharedExpBlink = ShieldBlueNoSharedExpBlink
+  context.ShieldYellowNoSharedExpBlink = ShieldYellowNoSharedExpBlink
+  context.ShieldBlueNoSharedExp = ShieldBlueNoSharedExp
+  context.ShieldYellowNoSharedExp = ShieldYellowNoSharedExp
 
   -- log functions
   context.info = function(text) return msgCallback("info", tostring(text)) end

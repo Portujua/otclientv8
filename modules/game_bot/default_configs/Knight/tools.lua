@@ -151,6 +151,26 @@ macro(5000, "Alert PK", function()
   end
 end)
 
+macro(1000, "Alert No Shared Exp", function()
+  if player:isPartySharedExperienceActive() then
+    if player:getShield() == ShieldBlueNoSharedExpBlink or player:getShield() == ShieldYellowNoSharedExpBlink
+        or player:getShield() == ShieldBlueNoSharedExp or player:getShield() == ShieldYellowNoSharedExp then
+      -- Play sound here
+      local channel = g_sounds.getChannel(SoundChannels.Messages)
+      if not channel then
+        return
+      end
+      channel:setEnabled(true)
+      channel:stop(0)
+      channel:play('/sounds/juntos.ogg', 0, 1.0)
+    end
+  end
+
+  -- if pk == true then
+  --   playAlarm()
+  -- end
+end)
+
 -- config
 local key = nil
 local parent = nil
