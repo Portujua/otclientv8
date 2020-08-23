@@ -2,10 +2,10 @@
   "hpitem1": {
     "max": 40,
     "title": "HP%",
-    "on": false,
+    "min": 0,
     "item": 23375,
-    "subType": 0,
-    "min": 0
+    "on": false,
+    "subType": 0
   },
   "manaTrain": {
     "max": 100,
@@ -57,15 +57,22 @@
     "z": 5
   },
   "hasteSpell": "utani hur",
-  "autoSummonSpell": "utevo gran res eq",
+  "manaitem2": {
+    "max": 50,
+    "title": "MP%",
+    "min": 0,
+    "item": 3157,
+    "on": false,
+    "subType": 0
+  },
   "_configs": {
-    "cavebot_configs": {
-      "enabled": false,
-      "selected": "Prison"
-    },
     "targetbot_configs": {
-      "selected": "All",
-      "enabled": true
+      "enabled": true,
+      "selected": "All"
+    },
+    "cavebot_configs": {
+      "selected": "Prison",
+      "enabled": false
     }
   },
   "healing1": {
@@ -75,86 +82,79 @@
     "min": 0,
     "text": "exura gran san"
   },
+  "foodItems": [
+    {
+      "id": 3582,
+      "count": 1
+    },
+    {
+      "id": 3577,
+      "count": 1
+    },
+    {
+      "id": 3725,
+      "count": 99
+    }
+  ],
+  "previousPosition": {
+    "y": -1,
+    "x": -1
+  },
+  "antiParalyze": "utani hur",
+  "dropItems": [
+    {
+      "count": 1,
+      "id": 283
+    },
+    {
+      "count": 1,
+      "id": 284
+    },
+    {
+      "count": 1,
+      "id": 285
+    }
+  ],
+  "autoArrow": "exevo gran con hur",
+  "manaitem1": {
+    "max": 90,
+    "title": "MP%",
+    "min": 51,
+    "item": 268,
+    "on": false,
+    "subType": 0
+  },
+  "hpitem2": {
+    "max": 50,
+    "title": "HP%",
+    "min": 0,
+    "item": 3160,
+    "on": false,
+    "subType": 0
+  },
+  "manaShield": "utamo vita",
+  "autoTradeMessage": "I'm using OTClientV8!",
+  "autoSummonSpell": "utevo gran res eq",
   "_macros": {
     "": false,
     "Utito tempo": false,
     "Utito tempo san": false,
     "Sorcerer": false,
     "Full Paladin": false,
-    "anti paralyze": false,
-    "Distance": false,
     "Stack items": true,
-    "Exchange money": true,
+    "Distance": false,
+    "Life Leech": false,
+    "Critical": false,
     "Axe": false,
-    "Paladin": false,
+    "Knight": false,
     "eat food": true,
     "haste": true,
-    "Anti Kick": true,
-    "Life Leech": false,
-    "Auto summon": true,
     "Auto arrows/bolts": true,
-    "Knight": false,
-    "Critical": false,
+    "anti paralyze": false,
+    "Auto summon": true,
+    "Exchange money": true,
+    "Paladin": false,
+    "Anti Kick": true,
     "Mana Leech": false
-  },
-  "previousPosition": {
-    "y": -1,
-    "x": -1
-  },
-  "manaitem2": {
-    "max": 50,
-    "title": "MP%",
-    "on": false,
-    "item": 3157,
-    "subType": 0,
-    "min": 0
-  },
-  "dropItems": [
-    {
-      "id": 283,
-      "count": 1
-    },
-    {
-      "id": 284,
-      "count": 1
-    },
-    {
-      "id": 285,
-      "count": 1
-    }
-  ],
-  "manaShield": "utamo vita",
-  "manaitem1": {
-    "max": 90,
-    "title": "MP%",
-    "on": false,
-    "item": 268,
-    "subType": 0,
-    "min": 51
-  },
-  "hpitem2": {
-    "max": 50,
-    "title": "HP%",
-    "on": false,
-    "item": 3160,
-    "subType": 0,
-    "min": 0
-  },
-  "autoArrow": "exevo gran con hur",
-  "autoTradeMessage": "I'm using OTClientV8!",
-  "antiParalyze": "utani hur",
-  "foodItems": [
-    {
-      "count": 1,
-      "id": 3582
-    },
-    {
-      "count": 1,
-      "id": 3577
-    },
-    {
-      "count": 99,
-      "id": 3725
-    }
-  ]
+  }
 }

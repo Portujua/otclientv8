@@ -9,16 +9,16 @@
   },
   "foodItems": [
     {
-      "id": 3582,
-      "count": 1
+      "count": 1,
+      "id": 3582
     },
     {
-      "id": 3577,
-      "count": 1
+      "count": 1,
+      "id": 3577
     },
     {
-      "id": 3725,
-      "count": 99
+      "count": 99,
+      "id": 3725
     }
   ],
   "autoEquip": [
@@ -66,12 +66,12 @@
   "hasteSpell": "utani hur",
   "autoSummonSpell": "utevo gran res eq",
   "_configs": {
-    "targetbot_configs": {
-      "enabled": true,
-      "selected": "All"
-    },
     "cavebot_configs": {
-      "selected": "Train",
+      "enabled": true,
+      "selected": "Train"
+    },
+    "targetbot_configs": {
+      "selected": "All",
       "enabled": true
     }
   },
@@ -95,16 +95,16 @@
   },
   "dropItems": [
     {
-      "count": 1,
-      "id": 283
+      "id": 283,
+      "count": 1
     },
     {
-      "count": 1,
-      "id": 284
+      "id": 284,
+      "count": 1
     },
     {
-      "count": 1,
-      "id": 285
+      "id": 285,
+      "count": 1
     }
   ],
   "manaitem2": {
@@ -132,27 +132,29 @@
     "on": false
   },
   "manaShield": "utamo vita",
-  "autoTradeMessage": "Trade my Donate Bow + Elven Mail for your Soulbastion shield",
+  "autoTradeMessage": "Sell Royal Paladin 756 (Arkangelitox) with thais house.. 175 coins",
   "antiParalyze": "exura ico",
   "_macros": {
     "": false,
     "Utito tempo": true,
     "Full Knight": false,
     "Sorcerer": false,
+    "anti paralyze": true,
+    "Alert PK": true,
     "Stack items": true,
-    "Mana Leech": false,
-    "Paladin": false,
     "Life Leech": false,
-    "Axe": false,
-    "eat food": true,
-    "Critical": false,
-    "haste": true,
+    "Alert No Shared Exp": true,
     "Exeta res": false,
+    "Axe": false,
+    "Mana Leech": false,
+    "eat food": true,
+    "haste": true,
+    "Paladin": false,
     "Knight": false,
     "Auto summon": true,
     "Exchange money": true,
     "Anti Kick": true,
-    "anti paralyze": true,
+    "Critical": false,
     "Send message on trade": true
   }
 }
